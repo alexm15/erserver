@@ -12,10 +12,10 @@ public class AlertScanner {
    private static final String ADMIN_ON_CALL_DEVICE = "111-111-1111";
 
    private StaffAssignmentManager staffAssignmentManager;
-   private InboundPatientController inboundPatientController;
+   private InboundPatientSource inboundPatientController;
    private ArrayList<Integer> criticalPatientNotificationsSent;
 
-   public AlertScanner(StaffAssignmentManager staffAssignmentManager, InboundPatientController inboundPatientController) {
+   public AlertScanner(StaffAssignmentManager staffAssignmentManager, InboundPatientSource inboundPatientController) {
       this.staffAssignmentManager = staffAssignmentManager;
       this.inboundPatientController = inboundPatientController;
       criticalPatientNotificationsSent = new ArrayList<>();
@@ -33,7 +33,7 @@ public class AlertScanner {
       }
    }
 
-   private void alertForNewCriticalPatient(Patient patient) {
+   protected void alertForNewCriticalPatient(Patient patient) {
       try {
          PagerTransport transport = PagerSystem.getTransport();
          transport.initialize();
