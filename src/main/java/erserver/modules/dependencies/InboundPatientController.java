@@ -20,7 +20,7 @@ public class InboundPatientController implements InboundPatientSource {
       this.transportService = transportService;
    }
 
-    @Override
+   @Override
    public List<Patient> currentInboundPatients() {
       String xmlForInbound = transportService.fetchInboundPatients();
       System.out.println("Recieved XML from transport service: \n" + xmlForInbound);

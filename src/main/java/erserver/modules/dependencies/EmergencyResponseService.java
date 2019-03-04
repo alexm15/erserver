@@ -6,7 +6,7 @@ import org.apache.http.entity.ContentType;
 
 import java.io.IOException;
 
-public class EmergencyResponseService {
+public class EmergencyResponseService implements DivergenceSystem {
 
    private String connectionString;
    private int timeout;
@@ -60,6 +60,7 @@ public class EmergencyResponseService {
       }
    }
 
+    @Override
    public void requestInboundDiversion(Priority priority) {
       String response = null;
       try {
@@ -75,6 +76,7 @@ public class EmergencyResponseService {
       }
    }
 
+    @Override
    public void removeInboundDiversion(Priority priority) {
       String response = null;
       try {

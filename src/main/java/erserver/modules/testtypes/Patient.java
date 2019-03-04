@@ -6,53 +6,57 @@ import java.time.LocalDate;
 
 public class Patient {
 
-   private int transportId;
-   private String name;
-   private LocalDate birthDate;
-   private Priority priority;
-   private String condition;
+    private int transportId;
+    private String name;
+    private LocalDate birthDate;
+    private Priority priority;
+    private String condition;
 
-   public int getTransportId() {
-      return transportId;
-   }
+    public int getTransportId() {
+        return transportId;
+    }
 
-   public void setTransportId(int transportId) {
-      this.transportId = transportId;
-   }
+    public void setTransportId(int transportId) {
+        this.transportId = transportId;
+    }
 
-   public LocalDate getBirthDate() {
-      return birthDate;
-   }
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
 
-   public void setBirthDate(LocalDate birthDate) {
-      this.birthDate = birthDate;
-   }
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
 
-   public ChildClassification getChildClassification() {
-      return ChildClassification.calculate(birthDate, LocalDate.now());
-   }
+    public ChildClassification getChildClassification() {
+        return ChildClassification.calculate(birthDate, getCurrentDate());
+    }
 
-   public String getName() {
-      return name;
-   }
+    protected LocalDate getCurrentDate() {
+        return LocalDate.now();
+    }
 
-   public void setName(String name) {
-      this.name = name;
-   }
+    public String getName() {
+        return name;
+    }
 
-   public Priority getPriority() {
-      return priority;
-   }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-   public void setPriority(Priority priority) {
-      this.priority = priority;
-   }
+    public Priority getPriority() {
+        return priority;
+    }
 
-   public String getCondition() {
-      return condition;
-   }
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
 
-   public void setCondition(String condition) {
-      this.condition = condition;
-   }
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
 }
