@@ -28,7 +28,7 @@ public class InboundPatientController {
       return patients;
    }
 
-   ArrayList<Patient> getPatientsFromXml(String xmlForInbound) {
+   public static ArrayList<Patient> getPatientsFromXml(String xmlForInbound) {
       ArrayList<Patient> patients = new ArrayList<>();
       SAXBuilder builder = new SAXBuilder();
       try {

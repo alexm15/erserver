@@ -11,7 +11,6 @@ public class InboundPatientControllerTest {
 
     @Test
     public void testInboundPatientXmlConvertion() {
-        InboundPatientController inboundPatientController = new InboundPatientController(null);
         String xmlForInbound = "<Inbound>\n" +
                 "    <Patient>\n" +
                 "        <TransportId>1</TransportId>\n" +
@@ -21,7 +20,7 @@ public class InboundPatientControllerTest {
                 "        <Birthdate></Birthdate>\n" +
                 "    </Patient>\n" +
                 "</Inbound>";
-        ArrayList<Patient> patients = inboundPatientController.getPatientsFromXml(xmlForInbound);
+        ArrayList<Patient> patients = InboundPatientController.getPatientsFromXml(xmlForInbound);
         assertNotNull(patients);
         assertEquals(1, patients.size());
         Patient patient = patients.get(0);
@@ -32,5 +31,6 @@ public class InboundPatientControllerTest {
         assertNull(patient.getBirthDate());
 
     }
+
 
 }
